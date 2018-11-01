@@ -28,9 +28,6 @@ public class TestCases extends TestBase {
 
 	}
 
-	@Test(priority = 2)
-	public void dashBoard() {
-
-	}
+	
 
 }
