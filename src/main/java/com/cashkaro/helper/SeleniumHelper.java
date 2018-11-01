@@ -29,6 +29,7 @@ public class SeleniumHelper {
 
 	public void switchToFrame(String framename) {
 		driver.switchTo().frame(framename);
+		
 	}
 
 	public void switchToFrame(int frameidorindex) {

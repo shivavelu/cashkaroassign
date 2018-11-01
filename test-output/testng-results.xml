@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7049" started-at="2018-10-31T04:27:38Z" finished-at="2018-10-31T04:27:45Z">
+  <suite name="Suite" duration-ms="16941" started-at="2018-11-01T08:26:04Z" finished-at="2018-11-01T08:26:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7049" started-at="2018-10-31T04:27:38Z" finished-at="2018-10-31T04:27:45Z">
+    <test name="Test" duration-ms="16941" started-at="2018-11-01T08:26:04Z" finished-at="2018-11-01T08:26:21Z">
       <class name="com.cashkaro.test.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cashkaro.test.TestCases@56235b8e]" name="setUp" is-config="true" duration-ms="5972" started-at="2018-10-31T09:57:38Z" finished-at="2018-10-31T09:57:44Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cashkaro.test.TestCases@56235b8e]" name="setUp" is-config="true" duration-ms="6720" started-at="2018-11-01T13:56:04Z" finished-at="2018-11-01T13:56:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="loginApp()[pri:0, instance:com.cashkaro.test.TestCases@56235b8e]" name="loginApp" duration-ms="1046" started-at="2018-10-31T09:57:44Z" finished-at="2018-10-31T09:57:45Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="loginApp()[pri:0, instance:com.cashkaro.test.TestCases@56235b8e]" name="loginApp" duration-ms="10176" started-at="2018-11-01T13:56:11Z" finished-at="2018-11-01T13:56:21Z">
+          <exception class="junit.framework.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<shivavelu@gmail.com> but was:<null>]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.cashkaro.pages.LoginPage.loginSwithto(LoginPage.java:46)
-	at com.cashkaro.test.TestCases.loginApp(TestCases.java:26)
+              <![CDATA[junit.framework.ComparisonFailure: expected:<shivavelu@gmail.com> but was:<null>
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at com.cashkaro.test.TestCases.loginApp(TestCases.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -44,15 +48,11 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- junit.framework.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginApp -->
-        <test-method status="PASS" signature="dashBoard()[pri:2, instance:com.cashkaro.test.TestCases@56235b8e]" name="dashBoard" duration-ms="1" started-at="2018-10-31T09:57:45Z" finished-at="2018-10-31T09:57:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dashBoard -->
       </class> <!-- com.cashkaro.test.TestCases -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
