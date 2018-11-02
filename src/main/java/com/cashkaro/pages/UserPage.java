@@ -19,10 +19,12 @@ public class UserPage {
 	@FindBy(css = "a#idMenuSettings")
 	private WebElement txtUserMenu;
 
-	@FindBy(css = "form#profileSettings > div > div:nth-of-type(2) > div > div > input")
-	private WebElement txtUserEmail;
+	@FindBy(css = "input#fullname")
+	public WebElement txtUserEmail;
 	
-
+	@FindBy(css = "a#idMenuLogout")
+	private WebElement lnkLogout;
+	
 	public UserPage(WebDriver driver) {
 		this.driver = driver;
 		selHelp = new SeleniumHelper(driver);
@@ -35,9 +37,17 @@ public class UserPage {
 		lnkAccount.click();
 		selHelp.waitforElementClickable(txtUserMenu);
 		txtUserMenu.click();
-		selHelp.waitforElementVisable(txtUserEmail);
-		email=txtUserEmail.getAttribute("value");
+		selHelp.waitforElementClickable(txtUserEmail);
 		return new UserPage(driver);
+	}
+	
+	public HomePage logOut()
+	{
+		selHelp.waitforElementClickable(lnkAccount);
+		lnkAccount.click();
+		selHelp.waitforElementClickable(lnkLogout);
+		lnkLogout.click();
+		return new HomePage(driver);
 	}
 
 	

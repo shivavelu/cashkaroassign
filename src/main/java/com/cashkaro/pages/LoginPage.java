@@ -48,17 +48,6 @@ public class LoginPage {
 		return new UserPage(driver);
 	}
 
-	public LoginPage loginSwithto() {
-		System.out.println(selHelp.handlesSet);
-		selHelp.swithhToSecondWindow(driver, selHelp.handlesList.get(1));
-		txtEmailID.click();
-		txtEmailID.clear();
-		txtEmailID.sendKeys("shivavelu@gmail.com");
-		txtPass.click();
-		txtPass.clear();
-		txtPass.sendKeys("chakal");
-		btnLogin.submit();
-		return new LoginPage(driver);
-	}
+	
 
 }

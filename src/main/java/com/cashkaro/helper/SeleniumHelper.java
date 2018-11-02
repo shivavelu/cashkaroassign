@@ -17,30 +17,33 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import freemarker.core.ReturnInstruction.Return;
+
 public class SeleniumHelper {
 	public static long PAGE_LOAD_TIMEOUT = 60;
 	public static long IMPLICIT_WAIT = 60;
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public Set<String> handlesSet;
 	public List<String> handlesList;
 
 	public JavascriptExecutor executor;
 
-	public void switchToFrame(String framename) {
-		driver.switchTo().frame(framename);
+	public void switchToFrame(WebElement element) {
+		driver.switchTo().frame(element);
 		
 	}
 
-	public void switchToFrame(int frameidorindex) {
+	public WebDriver switchToFrame(int frameidorindex) {
 		driver.switchTo().frame(frameidorindex);
+		return driver;
 	}
 
 	public SeleniumHelper(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public void takeScreenshotAtEndOfTest() throws IOException {
+	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
@@ -49,8 +52,9 @@ public class SeleniumHelper {
 	public WebDriver waitforElementVisable(WebElement element) {
 
 		WebDriverWait wait = new WebDriverWait(driver, 500);
-		wait.until(ExpectedConditions.invisibilityOf(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
 		return driver;
+		
 
 	}
 
